@@ -26,6 +26,9 @@ Route::get('/sobre-nos', 'SobreNosController@sobreNos');
 Route::get('/contato', 'ContatoController@contato');
 
 Route::get('/teste', 'TesteController@teste');
+Route::get('/teste/{nome}', function (string $nome) {
+    echo "Olá, $nome! Seja bem-vindo ao nosso site.";
+});
 
 /*
 ** Rotas com parâmetros
@@ -36,9 +39,6 @@ Route::get('/teste', 'TesteController@teste');
  4. Utilize controllers para lógica mais complexa, mantendo as rotas simples e organizadas.
 
  Exemplo de rota com um parâmetro
- Route::get('/saudacao/{nome}', function (string $nome) {
-    return "Olá, $nome! Seja bem-vindo ao nosso site.";
-})->where('nome', '[A-Za-z]+'); // Restringe o parâmetro 'nome' para conter apenas letras
 
 */
 
