@@ -23,7 +23,7 @@ Route::get('/', function () {
 Route::get('/', 'PrincipalController@principal');
 Route::get('/sobre-nos', 'SobreNosController@sobreNos');
 Route::get('/contato', 'ContatoController@contato');
-Route::get('/teste', 'TesteController@teste');
+Route::get('/teste', 'TesteController@teste'); /* apenas teste, nao faz parte do curso */
 
 /* Rotas com parâmetros */
 Route::get(
