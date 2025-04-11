@@ -25,6 +25,8 @@ Route::get('/sobre-nos', 'SobreNosController@sobreNos');
 
 Route::get('/contato', 'ContatoController@contato');
 
+Route::get('/teste', 'TesteController@teste');
+
 /*
 ** Rotas com parâmetros
  Nota: Exemplos de rotas com parâmetros e boas práticas
