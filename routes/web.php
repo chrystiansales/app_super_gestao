@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Ramsey\Uuid\Type\Integer;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,31 +21,41 @@ Route::get('/', function () {
 */
 
 Route::get('/', 'PrincipalController@principal');
-
 Route::get('/sobre-nos', 'SobreNosController@sobreNos');
-
 Route::get('/contato', 'ContatoController@contato');
-
 Route::get('/teste', 'TesteController@teste');
-Route::get('/teste/{nome}', function (string $nome) {
-    echo "Olá, $nome! Seja bem-vindo ao nosso site.";
-});
 
-/*
-** Rotas com parâmetros
- Nota: Exemplos de rotas com parâmetros e boas práticas
- 1. Use o método `where` para restringir os tipos de parâmetros (ex.: numéricos ou alfabéticos).
- 2. Nomeie os parâmetros de forma clara e descritiva para facilitar a compreensão.
- 3. Sempre valide os parâmetros recebidos para evitar erros ou comportamentos inesperados.
- 4. Utilize controllers para lógica mais complexa, mantendo as rotas simples e organizadas.
+/* Rotas com parâmetros */
+Route::get(
+    '/contato/{nome}/{categoria_id}',
+    function (
+        string $nome = 'Desconhecido',
+        int $categoria_id = 1
+    ) {
+        echo "Estamos aqui: $nome -  $categoria_id";
+    }
+)->where('categoria_id', '[0-9]+')
+ ->where('nome', '[A-Za-z]+')
+;
 
- Exemplo de rota com um parâmetro
-
-*/
 
 Route::get(
-    '/contato/{nome}/{categoria}/{assunto}/{mensagem}',
-    function (string $nome, string $categoria, string $assunto, string $mensagem) {
+    '/teste/{nome}',
+    function (string $nome) {
+        echo "Olá, $nome! Seja bem-vindo ao nosso site.";
+    }
+);
+
+/*
+Route::get(
+    '/contato/{nome?}/{categoria?}/{assunto?}/{mensagem?}',
+    function (
+        string $nome = 'desconhecido',
+        string $categoria = 'informação',
+        string $assunto = 'contato',
+        string $mensagem = 'mensagem nao foi informada'
+    ) {
         echo "Estamos aqui: $nome -  $categoria -  $assunto -  $mensagem";
     }
 );
+*/
