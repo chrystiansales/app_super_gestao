@@ -28,10 +28,16 @@ Route::get('/rota1', function () {
 })->name('site.rota1');
 
 Route::get('/rota2', function () {
-    echo 'rota2';
+    return redirect()->route('site.rota1'); //Route::redirect('/rota2', '/rota1'); outra forma de fazer
 })->name('site.rota2');
 
+Route::fallback(function () {
+    return response()
+        ->view('fallback', [], 404) // Retorna HTTP 404
+        ->header('Content-Type', 'text/html');
+})->name('site.fallback');
 
+// Route::get('/teste', 'TesteController@teste'); apenas para teste
 
 /* Rotas com parâmetros */
 /*
