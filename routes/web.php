@@ -1,5 +1,6 @@
 <?php
 
+use Faker\Guesser\Name;
 use Illuminate\Support\Facades\Route;
 use Ramsey\Uuid\Type\Integer;
 
@@ -14,18 +15,34 @@ use Ramsey\Uuid\Type\Integer;
 |
 */
 
+Route::get('/teste', 'TesteController@teste'); /* apenas teste, nao faz parte do curso */
 /*
 Route::get('/', function () {
     return view('welcome');
 });
 */
 
-Route::get('/', 'PrincipalController@principal');
-Route::get('/sobre-nos', 'SobreNosController@sobreNos');
-Route::get('/contato', 'ContatoController@contato');
-Route::get('/teste', 'TesteController@teste'); /* apenas teste, nao faz parte do curso */
+Route::get('/', 'PrincipalController@principal')->name('site.index');
+Route::get('/sobre-nos', 'SobreNosController@sobreNos')->name('site.sobrenos');
+Route::get('/contato', 'ContatoController@contato')->name('site.contato');
+Route::get('/login', function () {
+    return 'Login';
+})->Name('site.login');
+
+Route::prefix('/app')->group(function () {
+    Route::get('/clientes',     function () {
+        return 'Clientes';
+    })->name('app.clientes');
+    Route::get('/fornecedores', function () {
+        return 'fornecedores';
+    })->name('app.fornecedores');
+    Route::get('/produtos',     function () {
+        return 'produtos';
+    })->name('app.produtos');
+});
 
 /* Rotas com parâmetros */
+/*
 Route::get(
     '/contato/{nome}/{categoria_id}',
     function (
@@ -45,7 +62,6 @@ Route::get(
     }
 );
 
-/*
 Route::get(
     '/contato/{nome?}/{categoria?}/{assunto?}/{mensagem?}',
     function (
