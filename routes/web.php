@@ -23,6 +23,14 @@ Route::prefix('/app')->group(function () {
     })->name('app.produtos');
 });
 
+Route::get('/rota1', function () {
+    echo 'rota1';
+})->name('site.rota1');
+
+Route::get('/rota1', function () {
+    echo 'rota1';
+})->name('site.rota1');
+
 /* Rotas com parâmetros */
 /*
 Route::get(
@@ -56,7 +64,6 @@ Route::get(
     }
 );
 */
-
 
 /* Rota padrão do Laravel
 Route::get('/', function () {
