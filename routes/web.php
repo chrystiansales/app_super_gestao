@@ -30,8 +30,9 @@ Route::get('/rota1', function () {
 })->name('site.rota1');
 
 Route::get('/rota2', function () {
-    return redirect()->route('site.rota1'); //Route::redirect('/rota2', '/rota1'); outra forma de fazer
+    return redirect()->route('site.rota1');
 })->name('site.rota2');
+//Route::redirect('/rota2', '/rota1'); outra forma de fazer
 
 Route::fallback(function () {
     return response()
