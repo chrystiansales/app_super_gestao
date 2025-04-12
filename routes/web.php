@@ -27,9 +27,11 @@ Route::get('/rota1', function () {
     echo 'rota1';
 })->name('site.rota1');
 
-Route::get('/rota1', function () {
-    echo 'rota1';
-})->name('site.rota1');
+Route::get('/rota2', function () {
+    echo 'rota2';
+})->name('site.rota2');
+
+
 
 /* Rotas com parâmetros */
 /*
@@ -70,4 +72,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 */
-// Route::get('/teste', 'TesteController@teste');
+// Route::get('/teste', 'TesteController@teste'); apenas para teste
