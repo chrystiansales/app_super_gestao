@@ -38,7 +38,6 @@ Route::get(
  ->where('nome', '[A-Za-z]+')
 ;
 
-
 Route::get(
     '/teste/{nome}',
     function (string $nome) {
