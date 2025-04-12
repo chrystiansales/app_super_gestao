@@ -143,7 +143,9 @@
             // Simular tentativa de reconexão
             setTimeout(() => {
                 // Aqui você pode adicionar sua lógica de reconexão real
-                window.location.reload();
+                //window.location.reload();
+                window.location.href = '/';
+
             }, 2000);
         }
     </script>
