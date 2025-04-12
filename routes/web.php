@@ -4,13 +4,6 @@ use Faker\Guesser\Name;
 use Illuminate\Support\Facades\Route;
 use Ramsey\Uuid\Type\Integer;
 
-Route::get('/teste', 'TesteController@teste'); /* apenas teste, nao faz parte do curso */
-/* Rota padrão do Laravel
-Route::get('/', function () {
-    return view('welcome');
-});
-*/
-
 Route::get('/', 'PrincipalController@principal')->name('site.index');
 Route::get('/sobre-nos', 'SobreNosController@sobreNos')->name('site.sobrenos');
 Route::get('/contato', 'ContatoController@contato')->name('site.contato');
@@ -63,3 +56,11 @@ Route::get(
     }
 );
 */
+
+
+/* Rota padrão do Laravel
+Route::get('/', function () {
+    return view('welcome');
+});
+*/
+// Route::get('/teste', 'TesteController@teste');
