@@ -15,9 +15,11 @@ Route::prefix('/app')->group(function () {
     Route::get('/clientes',     function () {
         return 'Clientes';
     })->name('app.clientes');
+
     Route::get('/fornecedores', function () {
         return 'fornecedores';
     })->name('app.fornecedores');
+
     Route::get('/produtos',     function () {
         return 'produtos';
     })->name('app.produtos');
