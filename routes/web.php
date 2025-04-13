@@ -12,7 +12,7 @@ Route::get('/login', function () {
 })->Name('site.login');
 
 Route::prefix('/app')->group(function () {
-    Route::get('/clientes',     function () {
+    Route::get('/clientes', function () {
         return 'Clientes';
     })->name('app.clientes');
 
@@ -20,7 +20,7 @@ Route::prefix('/app')->group(function () {
         return 'fornecedores';
     })->name('app.fornecedores');
 
-    Route::get('/produtos',     function () {
+    Route::get('/produtos', function () {
         return 'produtos';
     })->name('app.produtos');
 });
@@ -29,10 +29,7 @@ Route::get('/rota1', function () {
     echo 'rota1';
 })->name('site.rota1');
 
-Route::get('/rota2', function () {
-    return redirect()->route('site.rota1');
-})->name('site.rota2');
-//Route::redirect('/rota2', '/rota1'); outra forma de fazer
+Route::get('/teste/{p1}/{p2}', 'TesteController@teste')->name('site.teste');
 
 Route::fallback(function () {
     return response()
@@ -40,7 +37,7 @@ Route::fallback(function () {
         ->header('Content-Type', 'text/html');
 })->name('site.fallback');
 
-// Route::get('/teste', 'TesteController@teste'); apenas para teste
+
 
 /* Rotas com parâmetros */
 /*
@@ -81,4 +78,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 */
-// Route::get('/teste', 'TesteController@teste'); apenas para teste
+
+/*
+Route::get('/rota2', function () {
+    return redirect()->route('site.rota1');
+})->name('site.rota2');
+
+
+Route::redirect('/rota2', '/rota1'); outra forma de fazer
+
+*/
