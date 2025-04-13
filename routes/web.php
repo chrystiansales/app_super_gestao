@@ -29,14 +29,13 @@ Route::get('/rota1', function () {
     echo 'rota1';
 })->name('site.rota1');
 
-Route::get('/teste/{p1}/{p2}', 'TesteController@teste')->name('site.teste');
-
 Route::fallback(function () {
     return response()
         ->view('fallback', [], 404) // Retorna HTTP 404
         ->header('Content-Type', 'text/html');
 })->name('site.fallback');
 
+Route::get('/teste/{p1}/{p2}', 'TesteController@teste')->name('site.teste');
 
 
 /* Rotas com parâmetros */
