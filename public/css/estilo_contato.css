@@ -156,10 +156,10 @@ button:hover {
 }
 
 .conteudo-pagina {
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    margin-bottom: 100px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centraliza verticalmente o conteúdo */
 }
 
 .titulo-pagina {

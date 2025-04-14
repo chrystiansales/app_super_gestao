@@ -4,7 +4,7 @@
 <head>
     <title>Super Gestão - Contato</title>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="{{ asset('css/estilo_basico.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/estilo_contato.css') }}">
 </head>
 
 <body>
