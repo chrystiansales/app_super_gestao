@@ -57,7 +57,7 @@
       Soma = <span id="soma">{{ $p1 + $p2 }}</span>
     </div>
   </div>
-
+<!--
   <script>
     // Exemplo JS para simular os valores caso precise testar localmente
     // Remova ou ajuste conforme uso com back-end (ex: Blade)
@@ -67,6 +67,8 @@
 
     document.getElementById('soma').textContent = soma;
   </script>
+-->
+
 </body>
 
 </html>
