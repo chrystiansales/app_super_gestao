@@ -1,12 +1,31 @@
 <h3>Consulta Fornecedor</h3>
 
-@if (count($fornecedores) > 0 && count($fornecedores) < 10)
-    <h3>existem alguns fornecedores cadastrados</h3>
-    <h3>existem {{ count($fornecedores) }} fornecedores cadastrados</h3>
-@elseif(count($fornecedores) > 10)
-    <h3>existem muitos fornecedores cadastrados</h3>
-    <h3>existem {{ count($fornecedores) }} fornecedores cadastrados</h3>
+@isset($fornecedores)
+    @for ($i = 0; isset($fornecedores[$i]); $i++)
+        Fornecedor: {{ $fornecedores[$i]['nome'] }}
+        <br>
+        Status: {{ $fornecedores[$i]['status'] }}
+        <br>
+        CNPJ: {{ $fornecedores[$i]['cnpj'] ?? '' }}
+        <br>
+        Telefone: {{ $fornecedores[$i]['ddd'] ?? '' }} Telefone: {{ $fornecedores[$i]['telefone'] ?? '' }}
+        <br>
+        @switch($fornecedores[$i]['ddd'])
+            @case('11')
+                Sao Paulo - SP
+            @break
 
-@else
-    <h3>não existem fornecedores cadastrados</h3>
-@endif
+            @case('85')
+                Fortaleza - CE
+            @break
+
+            @case('32')
+                Minas Gerais - MG
+            @break
+
+            @default
+                DDD não encontrado
+        @endswitch
+        <hr>
+    @endfor
+@endisset
