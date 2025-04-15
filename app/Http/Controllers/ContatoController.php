@@ -9,7 +9,7 @@ class ContatoController extends Controller
     public function contato()
     {
         return view('site.contato', [
-            'titulo' => 'Contato pela controller'
+            'titulo' => 'Contato Controller'
         ]);
     }
 }

@@ -9,7 +9,7 @@ class PrincipalController extends Controller
     public function principal()
     {
         return view('site.principal', [
-            'titulo' => 'home pela controller'
+            'titulo' => 'home Controller'
         ]);
     }
 }

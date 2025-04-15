@@ -9,7 +9,7 @@ class SobreNosController extends Controller
     public function sobreNos()
     {
         return view('site.sobre-nos', [
-            'titulo' => 'Sobre Nós pela controller'
+            'titulo' => 'Sobre Nós Controller'
         ]);
     }
 }
