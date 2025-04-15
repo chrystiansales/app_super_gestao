@@ -68,7 +68,6 @@
     document.getElementById('soma').textContent = soma;
   </script>
 -->
-
 </body>
 
 </html>
