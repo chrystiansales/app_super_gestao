@@ -13,4 +13,10 @@ class TesteController extends Controller
         //return view('site.teste')->with('p1', $p1)->with('p2', $p2); //with
         return view('site.teste', compact('p1', 'p2')); //compact
     }
+
+
+    function teste2(string $nome )
+    {
+        return view('site.teste', compact('nome')); //array associativo
+    }
 }
