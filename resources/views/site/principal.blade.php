@@ -2,7 +2,6 @@
 @section('titulo', $titulo)
 @section('conteudo')
     <div class="conteudo-destaque">
-
         <div class="esquerda">
             <div class="informacoes">
                 <h1>Sistema Super Gestão</h1>
@@ -17,13 +16,10 @@
                     <span class="texto-branco">Sua empresa na nuvem</span>
                 </div>
             </div>
-
             <div class="video">
                 <img src="{{ asset('img/player_video.jpg') }}" alt="Player Video">
-
             </div>
         </div>
-
         <div class="direita">
             <div class="contato">
                 <h1>Contato</h1>

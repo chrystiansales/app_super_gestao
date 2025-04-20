@@ -28,7 +28,6 @@
             </div>
         </div>
     </div>
-
     <div class="rodape">
         <div class="redes-sociais">
             <h2>Redes sociais</h2>
